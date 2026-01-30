@@ -1,31 +1,36 @@
 # PHASE 1: SQL BASICS
 
-- [X] SQL Intro
+- [x] SQL Intro  
+- SQL is a standard language used to store, retrieve, update, and manage data in relational databases.
 
 ```sql
 -- SQL is used to manage relational databases
-```
+````
 
-- [x] SQL Syntax
+* [x] SQL Syntax
+* SQL syntax defines the rules and structure for writing valid SQL queries.
 
 ```sql
 SELECT column_name FROM table_name;
 ```
 
-- [ ] SQL Data Types
+* [x] SQL Data Types
+* Data types specify what kind of data a column can store.
 
 ```sql
 INT, VARCHAR(100), DATE, FLOAT, BOOLEAN
 ```
 
-- [ ] SQL Comments
+* [x] SQL Comments
+* Comments are used to explain SQL code and are ignored during execution.
 
 ```sql
 -- Single line comment
 /* Multi-line comment */
 ```
 
-- [ ] SQL Operators
+* [x] SQL Operators
+* Operators perform comparison and logical operations in SQL.
 
 ```sql
 =, !=, >, <, >=, <=, AND, OR
@@ -35,41 +40,46 @@ INT, VARCHAR(100), DATE, FLOAT, BOOLEAN
 
 # PHASE 2: DATABASE & TABLE
 
-- [ ] SQL Create DB
+* [x] SQL Create Database
+* Creates a new database to store data.
 
 ```sql
 CREATE DATABASE School;
 ```
 
-- [ ] SQL Drop DB
+* [x] SQL Drop Database
+* Deletes an existing database permanently.
 
 ```sql
 DROP DATABASE School;
 ```
 
-- [ ] SQL Backup DB
+* [x] SQL Backup Database
+* Creates a backup copy of the database.
 
 ```sql
--- MySQL backup (CLI)
 mysqldump -u user -p School > backup.sql
 ```
 
-- [ ] SQL Create Table
+* [x] SQL Create Table
+* Creates a new table with defined columns.
 
 ```sql
 CREATE TABLE students (
-  id INT PRIMARY KEY,
+  id INT,
   name VARCHAR(100)
 );
 ```
 
-- [ ] SQL Drop Table
+* [x] SQL Drop Table
+* Deletes a table and its data.
 
 ```sql
 DROP TABLE students;
 ```
 
-- [ ] SQL Alter Table
+* [ ] SQL Alter Table
+* Modifies the structure of an existing table.
 
 ```sql
 ALTER TABLE students ADD email VARCHAR(100);
@@ -79,49 +89,57 @@ ALTER TABLE students ADD email VARCHAR(100);
 
 # PHASE 3: CONSTRAINTS
 
-- [ ] NOT NULL
+* [ ] NOT NULL
+* Ensures a column cannot contain NULL values.
 
 ```sql
 name VARCHAR(100) NOT NULL
 ```
 
-- [ ] UNIQUE
+* [ ] UNIQUE
+* Ensures all values in a column are unique.
 
 ```sql
 email VARCHAR(100) UNIQUE
 ```
 
-- [ ] PRIMARY KEY
+* [ ] PRIMARY KEY
+* Uniquely identifies each record in a table.
 
 ```sql
 id INT PRIMARY KEY
 ```
 
-- [ ] FOREIGN KEY
+* [ ] FOREIGN KEY
+* Creates a relationship between two tables.
 
 ```sql
 FOREIGN KEY (class_id) REFERENCES classes(id)
 ```
 
-- [ ] CHECK
+* [ ] CHECK
+* Restricts values based on a condition.
 
 ```sql
 age INT CHECK (age >= 5)
 ```
 
-- [ ] DEFAULT
+* [ ] DEFAULT
+* Sets a default value for a column.
 
 ```sql
 status VARCHAR(20) DEFAULT 'Active'
 ```
 
-- [ ] INDEX
+* [ ] INDEX
+* Improves query performance.
 
 ```sql
 CREATE INDEX idx_name ON students(name);
 ```
 
-- [ ] AUTO INCREMENT
+* [ ] AUTO INCREMENT
+* Automatically generates sequential values.
 
 ```sql
 id INT AUTO_INCREMENT
@@ -131,55 +149,64 @@ id INT AUTO_INCREMENT
 
 # PHASE 4: SELECT QUERIES
 
-- [ ] SELECT
+* [ ] SELECT
+* Retrieves data from a table.
 
 ```sql
 SELECT * FROM students;
 ```
 
-- [ ] SELECT DISTINCT
+* [ ] SELECT DISTINCT
+* Returns only unique values.
 
 ```sql
 SELECT DISTINCT class FROM students;
 ```
 
-- [ ] WHERE
+* [ ] WHERE
+* Filters records based on a condition.
 
 ```sql
 SELECT * FROM students WHERE class = '10';
 ```
 
-- [ ] AND
+* [ ] AND
+* Combines multiple conditions.
 
 ```sql
 SELECT * FROM students WHERE class = '10' AND section = 'A';
 ```
 
-- [ ] OR
+* [ ] OR
+* Returns records matching any condition.
 
 ```sql
 SELECT * FROM students WHERE class = '9' OR class = '10';
 ```
 
-- [ ] NOT
+* [ ] NOT
+* Excludes matching records.
 
 ```sql
 SELECT * FROM students WHERE NOT class = '10';
 ```
 
-- [ ] ORDER BY
+* [ ] ORDER BY
+* Sorts query results.
 
 ```sql
 SELECT * FROM students ORDER BY name ASC;
 ```
 
-- [ ] NULL VALUES
+* [ ] NULL VALUES
+* Finds records with NULL values.
 
 ```sql
 SELECT * FROM students WHERE phone IS NULL;
 ```
 
-- [ ] SELECT TOP / LIMIT
+* [ ] LIMIT / TOP
+* Limits the number of records returned.
 
 ```sql
 SELECT * FROM students LIMIT 5;
@@ -189,20 +216,23 @@ SELECT * FROM students LIMIT 5;
 
 # PHASE 5: DATA MODIFICATION
 
-- [ ] INSERT INTO
+* [ ] INSERT INTO
+* Adds new records to a table.
 
 ```sql
 INSERT INTO students(name, class)
 VALUES ('Rahul', '10');
 ```
 
-- [ ] UPDATE
+* [ ] UPDATE
+* Updates existing records.
 
 ```sql
 UPDATE students SET class = '9' WHERE id = 1;
 ```
 
-- [ ] DELETE
+* [ ] DELETE
+* Removes records from a table.
 
 ```sql
 DELETE FROM students WHERE id = 1;
@@ -212,37 +242,43 @@ DELETE FROM students WHERE id = 1;
 
 # PHASE 6: FILTERING
 
-- [ ] LIKE
+* [ ] LIKE
+* Searches using patterns.
 
 ```sql
 SELECT * FROM students WHERE name LIKE 'A%';
 ```
 
-- [ ] WILDCARDS
+* [ ] WILDCARDS
+* Special characters for pattern matching.
 
 ```sql
 'A%'  '%a'  '_a%'
 ```
 
-- [ ] IN
+* [ ] IN
+* Matches values from a list.
 
 ```sql
 SELECT * FROM students WHERE class IN ('9', '10');
 ```
 
-- [ ] BETWEEN
+* [ ] BETWEEN
+* Filters values within a range.
 
 ```sql
 SELECT * FROM students WHERE age BETWEEN 14 AND 16;
 ```
 
-- [ ] ALIASES
+* [ ] ALIASES
+* Assigns temporary names.
 
 ```sql
 SELECT name AS student_name FROM students;
 ```
 
-- [ ] CASE
+* [ ] CASE
+* Adds conditional logic.
 
 ```sql
 SELECT name,
@@ -253,7 +289,8 @@ END AS status
 FROM students;
 ```
 
-- [ ] NULL FUNCTIONS
+* [ ] NULL FUNCTIONS
+* Replaces NULL values.
 
 ```sql
 SELECT IFNULL(phone, 'N/A') FROM students;
@@ -263,37 +300,43 @@ SELECT IFNULL(phone, 'N/A') FROM students;
 
 # PHASE 7: AGGREGATE FUNCTIONS
 
-- [ ] COUNT
+* [ ] COUNT
+* Counts total rows.
 
 ```sql
 SELECT COUNT(*) FROM students;
 ```
 
-- [ ] MIN / MAX
+* [ ] MIN / MAX
+* Finds smallest and largest values.
 
 ```sql
 SELECT MIN(age), MAX(age) FROM students;
 ```
 
-- [ ] SUM
+* [ ] SUM
+* Adds numeric values.
 
 ```sql
 SELECT SUM(age) FROM students;
 ```
 
-- [ ] AVG
+* [ ] AVG
+* Calculates average.
 
 ```sql
 SELECT AVG(age) FROM students;
 ```
 
-- [ ] GROUP BY
+* [ ] GROUP BY
+* Groups rows for aggregation.
 
 ```sql
 SELECT class, COUNT(*) FROM students GROUP BY class;
 ```
 
-- [ ] HAVING
+* [ ] HAVING
+* Filters grouped results.
 
 ```sql
 SELECT class, COUNT(*)
@@ -306,7 +349,8 @@ HAVING COUNT(*) > 5;
 
 # PHASE 8: JOINS
 
-- [ ] INNER JOIN
+* [ ] INNER JOIN
+* Returns matching rows from both tables.
 
 ```sql
 SELECT s.name, c.class_name
@@ -314,21 +358,26 @@ FROM students s
 INNER JOIN classes c ON s.class_id = c.id;
 ```
 
-- [ ] LEFT JOIN
+* [ ] LEFT JOIN
+* Returns all rows from left table.
 
 ```sql
-SELECT * FROM students s
+SELECT *
+FROM students s
 LEFT JOIN classes c ON s.class_id = c.id;
 ```
 
-- [ ] RIGHT JOIN
+* [ ] RIGHT JOIN
+* Returns all rows from right table.
 
 ```sql
-SELECT * FROM students s
+SELECT *
+FROM students s
 RIGHT JOIN classes c ON s.class_id = c.id;
 ```
 
-- [ ] FULL JOIN (Simulated in MySQL)
+* [ ] FULL JOIN
+* Returns all rows from both tables.
 
 ```sql
 SELECT * FROM A
@@ -338,7 +387,8 @@ SELECT * FROM A
 RIGHT JOIN B ON A.id = B.id;
 ```
 
-- [ ] SELF JOIN
+* [ ] SELF JOIN
+* Joins a table with itself.
 
 ```sql
 SELECT A.name, B.name
@@ -350,7 +400,8 @@ WHERE A.id <> B.id;
 
 # PHASE 9: SUBQUERIES & SETS
 
-- [ ] EXISTS
+* [ ] EXISTS
+* Checks if a subquery returns data.
 
 ```sql
 SELECT * FROM students s
@@ -359,14 +410,16 @@ WHERE EXISTS (
 );
 ```
 
-- [ ] ANY / ALL
+* [ ] ANY / ALL
+* Compares values with subquery results.
 
 ```sql
 SELECT * FROM students
 WHERE age > ANY (SELECT age FROM students WHERE class='10');
 ```
 
-- [ ] UNION
+* [ ] UNION
+* Combines results without duplicates.
 
 ```sql
 SELECT name FROM students_2023
@@ -374,7 +427,8 @@ UNION
 SELECT name FROM students_2024;
 ```
 
-- [ ] UNION ALL
+* [ ] UNION ALL
+* Combines results with duplicates.
 
 ```sql
 SELECT name FROM students_2023
@@ -386,13 +440,15 @@ SELECT name FROM students_2024;
 
 # PHASE 10: DATA TRANSFER
 
-- [ ] SELECT INTO
+* [ ] SELECT INTO
+* Copies data into a new table.
 
 ```sql
 SELECT * INTO backup_students FROM students;
 ```
 
-- [ ] INSERT INTO SELECT
+* [ ] INSERT INTO SELECT
+* Copies data into an existing table.
 
 ```sql
 INSERT INTO alumni(name)
@@ -403,14 +459,16 @@ SELECT name FROM students WHERE status='Passed';
 
 # PHASE 11: ADVANCED
 
-- [ ] VIEWS
+* [ ] VIEWS
+* Virtual tables created from queries.
 
 ```sql
 CREATE VIEW active_students AS
 SELECT * FROM students WHERE status='Active';
 ```
 
-- [ ] STORED PROCEDURES
+* [ ] STORED PROCEDURES
+* Reusable SQL logic stored in the database.
 
 ```sql
 CREATE PROCEDURE GetStudents()
@@ -419,29 +477,27 @@ BEGIN
 END;
 ```
 
-- [ ] SQL Injection (Unsafe)
+* [ ] SQL Injection
+* A security attack using malicious SQL input.
 
 ```sql
-SELECT * FROM users WHERE name = ' ' OR '1'='1';
+SELECT * FROM users WHERE name = '' OR '1'='1';
 ```
 
 ---
 
 # PHASE 12: DATES & HOSTING
 
-- [ ] SQL Dates
+* [ ] SQL Dates
+* Functions used to handle date and time.
 
 ```sql
 SELECT CURDATE();
 ```
 
-- [ ] SQL Hosting
+* [ ] SQL Hosting
+* Running databases on cloud platforms.
 
 ```sql
--- Hosted DB: AWS RDS / Azure SQL / PlanetScale
+AWS RDS / Azure SQL / PlanetScale
 ```
-
----
-
-Want Next?
-And :- learn prisma orm || drizzle orm 😂

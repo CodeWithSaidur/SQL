@@ -83,7 +83,6 @@ select name, phone,  admission_date from students order by admission_date;
 
 select name, age from students where age > '10';
 
-select * from students where name like 'A%'
-
+select * from students where name like 'A%';
 
 
