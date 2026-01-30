@@ -78,7 +78,7 @@ CREATE TABLE students (
 DROP TABLE students;
 ```
 
-* [ ] SQL Alter Table
+* [x] SQL Alter Table
 * Modifies the structure of an existing table.
 
 ```sql
@@ -89,14 +89,14 @@ ALTER TABLE students ADD email VARCHAR(100);
 
 # PHASE 3: CONSTRAINTS
 
-* [ ] NOT NULL
+* [x] NOT NULL
 * Ensures a column cannot contain NULL values.
 
 ```sql
 name VARCHAR(100) NOT NULL
 ```
 
-* [ ] UNIQUE
+* [x] UNIQUE
 * Ensures all values in a column are unique.
 
 ```sql
