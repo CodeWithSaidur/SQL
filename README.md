@@ -103,42 +103,42 @@ name VARCHAR(100) NOT NULL
 email VARCHAR(100) UNIQUE
 ```
 
-- [ ] PRIMARY KEY
+- [x] PRIMARY KEY
 - Uniquely identifies each record in a table.
 
 ```sql
 id INT PRIMARY KEY
 ```
 
-- [ ] FOREIGN KEY
+- [x] FOREIGN KEY
 - Creates a relationship between two tables.
 
 ```sql
 FOREIGN KEY (class_id) REFERENCES classes(id)
 ```
 
-- [ ] CHECK
+- [x] CHECK
 - Restricts values based on a condition.
 
 ```sql
 age INT CHECK (age >= 5)
 ```
 
-- [ ] DEFAULT
+- [x] DEFAULT
 - Sets a default value for a column.
 
 ```sql
 status VARCHAR(20) DEFAULT 'Active'
 ```
 
-- [ ] INDEX
+- [x] INDEX
 - Improves query performance.
 
 ```sql
 CREATE INDEX idx_name ON students(name);
 ```
 
-- [ ] AUTO INCREMENT
+- [x] AUTO INCREMENT
 - Automatically generates sequential values.
 
 ```sql
@@ -149,56 +149,56 @@ id INT AUTO_INCREMENT
 
 # PHASE 4: SELECT QUERIES
 
-- [ ] SELECT
+- [x] SELECT
 - Retrieves data from a table.
 
 ```sql
 SELECT * FROM students;
 ```
 
-- [ ] SELECT DISTINCT
+- [x] SELECT DISTINCT
 - Returns only unique values.
 
 ```sql
 SELECT DISTINCT class FROM students;
 ```
 
-- [ ] WHERE
+- [x] WHERE
 - Filters records based on a condition.
 
 ```sql
 SELECT * FROM students WHERE class = '10';
 ```
 
-- [ ] AND
+- [x] AND
 - Combines multiple conditions.
 
 ```sql
 SELECT * FROM students WHERE class = '10' AND section = 'A';
 ```
 
-- [ ] OR
+- [x] OR
 - Returns records matching any condition.
 
 ```sql
 SELECT * FROM students WHERE class = '9' OR class = '10';
 ```
 
-- [ ] NOT
+- [x] NOT
 - Excludes matching records.
 
 ```sql
 SELECT * FROM students WHERE NOT class = '10';
 ```
 
-- [ ] ORDER BY
+- [x] ORDER BY
 - Sorts query results.
 
 ```sql
 SELECT * FROM students ORDER BY name ASC;
 ```
 
-- [ ] NULL VALUES
+- [x] NULL VALUES
 - Finds records with NULL values.
 
 ```sql
